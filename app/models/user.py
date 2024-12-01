@@ -4,6 +4,7 @@ from sqlalchemy import Column, Integer, String,Enum
 class User(db.Model):
 	id = Column(Integer, primary_key=True)
 	name = Column(String(64), unique=True, nullable=False)
+	email = Column(String(128), unique=True,nullable=False,default="")
 	password = Column(String(128), nullable=False)
 	kind = Column(Enum('user','mod','admin'),nullable=False)
 
