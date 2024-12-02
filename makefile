@@ -1,4 +1,4 @@
-init: bootstrap
+init:
 	python3 -m venv venv
 	. venv/bin/activate && pip install -r req_3_12_6.txt
 

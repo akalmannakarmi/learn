@@ -1,4 +1,6 @@
 import os
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 # Import configuration classes for different environments
 from .default import Config

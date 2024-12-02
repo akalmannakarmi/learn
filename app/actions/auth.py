@@ -13,7 +13,7 @@ def login():
 	rq=['name','password']
 	if any(i not in data for i in rq):
 		result = {"Require":{','.join(rq)}}
-		return jsonify(result)
+		return jsonify(str(result))
 
 	user = User.query.filter_by(name=data['name']).first()
 	if user and bcrypt.checkpw(data['password'].encode('utf-8'), user.password):
@@ -21,8 +21,7 @@ def login():
 		return redirect(request.form.get("next",'/'))
 	
 	return redirect('/login?error=Incorrect name or password')
-
-@app.route('/signUp',methods=["POST"])
+@app.route('/signUp', methods=["POST"])
 def signUp():
 	if 'userId' in session and User.isUser(session['userId']):
 		return redirect('/')
@@ -31,7 +30,7 @@ def signUp():
 	
 	rq=['name','password']
 	if any(i not in data for i in rq):
-		result = {"Require":{','.join(rq)}}
+		result = {"Require": ', '.join(rq)}
 		return jsonify(result)
 		
 	if len(data['name']) > 64:
@@ -46,5 +45,5 @@ def signUp():
 
 @app.route('/logout',methods=["GET","POST"])
 def logout():
-    session.pop('userId')
-    return redirect('/login')
+	session.pop('userId')
+	return redirect('/login')

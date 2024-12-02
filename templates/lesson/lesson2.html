@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Quiz</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/static/bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .answer-section {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+        }
+        .answer {
+            font-weight: bold;
+            color: green;
+        }
+        .wrong {
+            font-style: italic;
+            color: #dc3545;
+        }
+        .correct {
+            font-style: italic;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <!-- Embedded YouTube Video -->
+        <div class="mb-4">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3LPJfIKxwWc?si=G_RAEmRE7Wv3yWcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>    
+        <h1 class="text-center mb-4">Programming Quiz</h1>
+        <form method="POST">
+            <!-- Question 1 -->
+            <div class="mb-4">
+                <h3>1. How many bits are there in a byte?</h3>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q1" value="1" id="q1a">
+                    <label class="form-check-label" for="q1a">1) 4</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q1" value="2" id="q1b">
+                    <label class="form-check-label" for="q1b">2) 8</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q1" value="3" id="q1c">
+                    <label class="form-check-label" for="q1c">3) 16</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q1" value="4" id="q1d">
+                    <label class="form-check-label" for="q1d">4) 32</label>
+                </div>
+                {% if answers %}
+                <div class="answer-section">
+                    You chose: <span class="{% if answers[0].answer == 2 %}correct{% else %}wrong{% endif %}">Option {{answers[0].answer}}</span><br>
+                    Correct answer: <span class="answer">Option 2</span>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Question 2 -->
+            <div class="mb-4">
+                <h3>2. What is Unicode?</h3>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q2" value="1" id="q2a">
+                    <label class="form-check-label" for="q2a">1) A programming language</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q2" value="2" id="q2b">
+                    <label class="form-check-label" for="q2b">2) A character encoding standard</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q2" value="3" id="q2c">
+                    <label class="form-check-label" for="q2c">3) A web development framework</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q2" value="4" id="q2d">
+                    <label class="form-check-label" for="q2d">4) A type of font</label>
+                </div>
+                {% if answers %}
+                <div class="answer-section">
+                    You chose: <span class="{% if answers[1].answer == 2 %}correct{% else %}wrong{% endif %}">Option {{answers[1].answer}}</span><br>
+                    Correct answer: <span class="answer">Option 2</span>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Question 3 -->
+            <div class="mb-4">
+                <h3>3. Which of the following is NOT a programming language?</h3>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q3" value="1" id="q3a">
+                    <label class="form-check-label" for="q3a">1) Python</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q3" value="2" id="q3b">
+                    <label class="form-check-label" for="q3b">2) JavaScript</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q3" value="3" id="q3c">
+                    <label class="form-check-label" for="q3c">3) Ruby</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q3" value="4" id="q3d">
+                    <label class="form-check-label" for="q3d">4) React</label>
+                </div>
+                {% if answers %}
+                <div class="answer-section">
+                    You chose: <span class="{% if answers[2].answer == 4 %}correct{% else %}wrong{% endif %}">Option {{answers[2].answer}}</span><br>
+                    Correct answer: <span class="answer">Option 4</span>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Question 4 -->
+            <div class="mb-4">
+                <h3>4. What is the correct way to print "Hello, World!" in C?</h3>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q4" value="1" id="q4a">
+                    <label class="form-check-label" for="q4a">1) console.log("Hello, World!");</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q4" value="2" id="q4b">
+                    <label class="form-check-label" for="q4b">2) print("Hello, World!");</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q4" value="3" id="q4c">
+                    <label class="form-check-label" for="q4c">3) printf("Hello, World!");</label>
+                </div>
+                <div class="form-check">
+                    <input required type="radio" class="form-check-input" name="q4" value="4" id="q4d">
+                    <label class="form-check-label" for="q4d">4) System.out.println("Hello, World!");</label>
+                </div>
+                {% if answers %}
+                <div class="answer-section">
+                    You chose: <span class="{% if answers[3].answer == 3 %}correct{% else %}wrong{% endif %}">Option {{answers[3].answer}}</span><br>
+                    Correct answer: <span class="answer">Option 3</span>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Submit Button -->
+            {% if not answers %}
+            <button type="submit" class="btn btn-primary">Submit Quiz</button>
+            {% endif %}
+        </form>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="/static/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
